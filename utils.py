@@ -1,8 +1,6 @@
 import json
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from PIL import Image
 
 import torch
@@ -216,21 +214,6 @@ def get_image_title(image_path, cat_to_name):
     return cat_to_name[flower_catg]
 
 
-
-def view_matlab_classify(image, title, probs, flowers):
-
-    print("Displaying Image and its Predictions.. ")
-
-    plt.figure(figsize = (6,10))
-    ax = plt.subplot(2,1,1)
-
-    print("Show Image.. ")
-    imshow(image, ax, title)
-
-    print("Show Prediction.. ")
-    plt.subplot(2,1,2)
-    sns.barplot(x=probs, y=flowers, color=sns.color_palette()[0]);
-    plt.show()
 
 def view_classify(title, probs, flowers):
     print("Label of the Image: {}".format(title))
